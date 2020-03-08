@@ -23,9 +23,11 @@ public class TestClass1 {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().fullscreen();
 			}
-@Test
+//@Test
 public void Test1() {
-	
+	String myName = "Reena";
+	String myFirstName = "Reena";
+	String mylastName = myName + myFirstName +"";
 	driver.get("https://automationtalks.com/");
 	String title = driver.getTitle();
 	System.out.println("Test 1 Title is :"+driver.getTitle());
@@ -37,13 +39,14 @@ public void Test2() {
 	String title = driver.getTitle();
 	Assert.assertEquals("Google",title);
 }
-@Test
+
+//@Test
 public void Test3() {
 	driver.get("https://www.facebook.com/");
 	String title = driver.getTitle();	
 	Assert.assertEquals(true, title.contains("Facebook"));
 }
-	@Test
+//@Test
 public void Test11() {
 	
 	driver.get("https://automationtalks.com/");
@@ -51,13 +54,13 @@ public void Test11() {
 	System.out.println("Test 1 Title is :"+driver.getTitle());
 	Assert.assertEquals("AutomationTalks - Learn Automation Testing",title);
 }
-@Test
+//@Test
 public void Test22() {
 	driver.get("https://www.google.com/");
 	String title = driver.getTitle();
 	Assert.assertEquals("Google",title);
 }
-@Test
+//@Test
 public void Test33() {
 	driver.get("https://www.facebook.com/");
 	String title = driver.getTitle();	
@@ -69,18 +72,5 @@ public void quit() {
 	driver.quit();
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
