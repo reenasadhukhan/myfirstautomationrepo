@@ -2,7 +2,7 @@ package com.reena.mynewproject;
 
 import java.util.Date;
 
-public class TestClass1 {
+public class TestMainClass {
 
 	public static void main(String[] args) {
 		String myName = "Reena";
@@ -10,7 +10,7 @@ public class TestClass1 {
 		String mylastName = myName + myFirstName +"";
 		Date dt = new Date();
 		int hr = dt.getHours();
-		System.out.println(dt +"  "+ hr);
+		System.out.println(dt +"  "+ hr + "Sonar Test in Main Java files");
 	}
 
 }
