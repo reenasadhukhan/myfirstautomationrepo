@@ -43,6 +43,26 @@ public void Test3() {
 	String title = driver.getTitle();	
 	Assert.assertEquals(true, title.contains("Facebook"));
 }
+	@Test
+public void Test11() {
+	
+	driver.get("https://automationtalks.com/");
+	String title = driver.getTitle();
+	System.out.println("Test 1 Title is :"+driver.getTitle());
+	Assert.assertEquals("AutomationTalks - Learn Automation Testing",title);
+}
+@Test
+public void Test22() {
+	driver.get("https://www.google.com/");
+	String title = driver.getTitle();
+	Assert.assertEquals("Google",title);
+}
+@Test
+public void Test33() {
+	driver.get("https://www.facebook.com/");
+	String title = driver.getTitle();	
+	Assert.assertEquals(true, title.contains("Facebook"));
+}
 
 @AfterMethod
 public void quit() {
