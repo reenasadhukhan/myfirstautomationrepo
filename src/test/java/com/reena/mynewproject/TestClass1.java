@@ -6,7 +6,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentI
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -18,20 +18,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestClass1 {
 
-	public WebDriver driver;
+	private WebDriver driver;
 
 	@BeforeClass
 	public static void setupClass() {
-		//WebDriverManager.chromedriver().setup();
-		WebDriverManager.phantomjs().setup();
+		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.phantomjs().setup();
 	}
 	
 	@BeforeMethod
 	public void launchDriver() {
-		//driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//driver.manage().window().fullscreen();
-		driver = new PhantomJSDriver();
+		//driver = new PhantomJSDriver();
 	}
 
 	@Test
