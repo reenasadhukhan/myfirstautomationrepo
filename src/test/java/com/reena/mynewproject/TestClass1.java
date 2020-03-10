@@ -6,7 +6,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentI
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -22,20 +22,20 @@ public class TestClass1 {
 
 	@BeforeClass
 	public static void setupClass() {
-		WebDriverManager.chromedriver().setup();
-		//WebDriverManager.phantomjs().setup();
+		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.phantomjs().setup();
 	}
 	
 	@BeforeMethod
 	public void launchDriver() {
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//driver.manage().window().fullscreen();
-		//driver = new PhantomJSDriver();
+		driver = new PhantomJSDriver();
 	}
 
 	@Test
-	public void Test1() {
+	public void test1() {
 		String myName = "Reena";
 		String myFirstName = "Reena";
 		String mylastName = myName + myFirstName + "";
@@ -46,14 +46,14 @@ public class TestClass1 {
 	}
 
 	@Test
-	public void Test2() {
+	public void test2() {
 		driver.get("https://www.google.com/");
 		String title = driver.getTitle();
 		Assert.assertEquals("Google", title);
 	}
 
     @Test
-	public void Test3() {
+	public void test3() {
 		driver.get("https://www.facebook.com/");
 		String title = driver.getTitle();
 		Assert.assertEquals(true, title.contains("Facebook"));
